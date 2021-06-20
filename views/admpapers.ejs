@@ -1,0 +1,138 @@
+<%- include("partials/header.ejs") %>
+    <div class="row">
+        <%- include("partials/admin_navbar.ejs") %>
+            <div class="col-md-8 left">
+                <p class="heading-pg">View Publications</p>
+                <form action="/admpublication" method="POST" encType="multipart/form-data" novalidate>
+                    <span>
+                        <label>Category</label>
+                        <select class="" name="category" placeholder="category" required>
+                        <option value="all">All</option>
+                        <option value="International Journal">International Journal</option>
+                        <option value="National Journal">National Journal</option>
+                        <option value="Book Chapter">Book Chapter</option>
+                        <option value="Edited Book">Edited Book</option>
+                        <option value="National Conference">National Conference</option>
+                        <option value="International Conference">
+                            International Conference
+                        </option></form>
+                        <option value="Patent">Patent</option>
+                        </select>
+                    </span>
+                    <span>
+                        <label>Year</label>
+                        <select id="year" name="pubyear"></select>
+
+                    </span>
+                    <button class="btn btn-primary" class="submit">Download</button>
+                </form>
+                <div>
+                    <span>
+                        <label>Search By Author</label>
+                        <input type="text" id="myInput2" onkeyup="myFunction()" placeholder="GU ID or Name"></span>
+                </div>
+
+
+                <div class="table-responsive">
+                    <table class="table table-hover css-serial table-striped" id="admpapers">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th scope="col">Category</th>
+                                <th scope="col">Author</th>
+                                <th scope="col">Journal Name</th>
+                                <th scope="col">Publication Title</th>
+                                <th scope="col">Volume Number</th>
+                                <th scope="col">Issue Number</th>
+                                <th scope="col">Page Number</th>
+                                <th scope="col">Issn Number</th>
+                                <th scope="col">Indexing Number</th>
+                            </tr>
+                        </thead>
+                        <% rPapers.forEach(function(i){ %>
+                            <tbody>
+                                <tr>
+                                    <td></td>
+
+                                    <td>
+                                        <%= i.Category %>
+                                    </td>
+                                    <td>
+                                        <%= i.author %>
+                                    </td>
+                                    <td>
+                                        <%= i.journal_name %>
+                                    </td>
+                                    <td>
+                                        <%= i.publication_title %>
+                                    </td>
+                                    <td>
+                                        <%= i.volume_number %>
+                                    </td>
+                                    <td>
+                                        <%= i.issue_number %>
+                                    </td>
+                                    <td>
+                                        <%= i.page_number %>
+                                    </td>
+                                    <td>
+                                        <%= i.issn_number %>
+                                    </td>
+                                    <td>
+                                        <%= i.pindexing %>
+                                    </td>
+                                    <td>
+                                        <%= i.pubDate %>
+                                    </td>
+                                    <td>
+                                        <a href="publication/edit?puid=<%= i._id %>">Edit</a>
+                                    </td>
+                                    <td>
+                                        <a href="#" style="color: red;">Delete</a>
+                                    </td>
+
+
+                                </tr>
+
+                            </tbody>
+
+                            <% }); %>
+                    </table>
+                </div>
+                <script>
+                    var start = 2000;
+                    var end = new Date().getFullYear();
+                    var options = "";
+                    for (var year = start; year <= end; year++) {
+                        options += "<option value=" + year + ">" + year + "</option>";
+                    }
+                    options += "<option value=" + "all" + ">" + -1 + "</option>";
+                    document.getElementById("year").innerHTML = options;
+                </script>
+                <script>
+                    function myFunction() {
+                        // Declare variables
+                        var input, filter, table, tr, td, i, txtValue;
+                        input = document.getElementById("myInput2");
+                        filter = input.value.toUpperCase();
+                        table = document.getElementById("admpapers");
+                        tr = table.getElementsByTagName("tr");
+
+                        // Loop through all table rows, and hide those who don't match the search query
+                        for (i = 0; i < tr.length; i++) {
+                            td = tr[i].getElementsByTagName("td")[2];
+                            if (td) {
+                                txtValue = td.textContent || td.innerText;
+                                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                                    tr[i].style.display = "";
+                                } else {
+                                    tr[i].style.display = "none";
+                                }
+                            }
+                        }
+                    }
+                </script>
+            </div>
+
+    </div>
+    <%- include("partials/footer.ejs") %>

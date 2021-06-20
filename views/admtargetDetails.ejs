@@ -1,0 +1,94 @@
+<%- include("partials/header.ejs") %>
+    <div class="row">
+        <%- include("partials/admin_navbar.ejs") %>
+            <div class="col-md-8 left">
+                <p class="heading-pg">Targets</p>
+                <span>
+                    <label>Assigned To</label>
+                    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="GU ID">                </span>
+                <div class="table-responsive">
+                    <table class="table table-hover css-serial table-striped" id="admtargets">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th scope="col">Category</th>
+                                <th scope="col">Title</th>
+                                <th scope="col">Indexing</th>
+                                <th scope="col">Date</th>
+                                <th scope="col">Assigned By</th>
+                                <th scope="col">Assigned To</th>
+                            </tr>
+                        </thead>
+                        <% setTarget.forEach(function(i){ %>
+                            <tbody>
+                                <tr>
+                                    <td></td>
+                                    <td>
+                                        <%= i.category_set_trgt %>
+                                    </td>
+                                    <td>
+                                        <%= i.title_set_trgt%>
+                                    </td>
+                                    <td>
+                                        <%= i.indexing %>
+                                    </td>
+                                    <td>
+                                        <%= i.achievement_date_set_trgt %>
+                                    </td>
+                                    <td>
+                                        <%= i.assigned_by %>
+                                    </td>
+                                    <td>
+                                        <%= i.assigned_to %>
+                                    </td>
+
+                                    <% if(i.completed == 0){ %>
+                                        <td>
+                                            <a href="">Not Completed</a>
+                                        </td>
+                                        <% }else{ %>
+                                            <td>
+                                                <a href="#">Completed</a>
+                                            </td>
+                                            <% } %>
+                                                <!-- <td>
+                                                    <a href="/settarget/edit?puid=<%= i._id %>">Edit</a>
+                                                </td> -->
+                                                <% if(i.completed == 0){ %>
+                                                    <td>
+                                                        <a href="/settarget/delete/<%= i._id %>" style="color: red;">Delete</a>
+                                                    </td>
+                                                    <% } %>
+
+
+                                </tr>
+                            </tbody>
+                            <% }); %>
+                    </table>
+                </div>
+                <script>
+                    function myFunction() {
+                        // Declare variables
+                        var input, filter, table, tr, td, i, txtValue;
+                        input = document.getElementById("myInput");
+                        filter = input.value.toUpperCase();
+                        table = document.getElementById("admtargets");
+                        tr = table.getElementsByTagName("tr");
+
+                        // Loop through all table rows, and hide those who don't match the search query
+                        for (i = 0; i < tr.length; i++) {
+                            td = tr[i].getElementsByTagName("td")[6];
+                            if (td) {
+                                txtValue = td.textContent || td.innerText;
+                                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                                    tr[i].style.display = "";
+                                } else {
+                                    tr[i].style.display = "none";
+                                }
+                            }
+                        }
+                    }
+                </script>
+            </div>
+
+    </div>

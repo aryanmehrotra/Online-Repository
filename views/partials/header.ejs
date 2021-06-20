@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- <title>Home</title> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/stylesheets/main.css" />
+</head>
+
+
+<body>
+    <div>
+        <nav class="navbar navbar-expand navbar-dark navs fixed-top">
+            <div class="navbar-nav d-block d-lg-none">
+                <a class="nav-item nav-link" onclick="openNav()">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+            <a class="navbar-brand" href="/login"><img src="/images/logo.png" class="logo" alt="" /></a>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav navbard-link">
+                    <% if(!currentUser){ %>
+                        <a class="nav-item nav-link" href="/register">Sign Up!</a>
+                        <a class="nav-item nav-link" href="/">Login </a>
+                        <% }else{ %>
+                            <!-- Modifications needed here -->
+                            <div class="dropdown">
+                                <a class="btn dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <i class="fas fa-bell"></i><sup style="color: white; font-weight: 500;">
+
+            
+                                        <%= notify.length %>
+                                        
+                                    </sup>
+                                </a>
+
+
+                                <div class="dropdown-menu p-2 text-muted" style="min-width: 200px; max-width: 400px;">
+
+                                    <% if(notify.length == 0){ %>
+                                        <p>No new Notification </p>
+                                        <% } %>
+
+                                            <% notify.forEach(function(i){ %>
+                                                <p>
+                                                    <span style="font-weight: bold;"> <%=i .category_set_trgt %> </span> on
+                                                    <span style="font-weight: bold;"><%= i.title_set_trgt %></span> assigned by
+                                                    <span style="font-weight: bold;"><%= i.assigned_by %></span>
+                                                </p>
+                                                <% }); %>
+
+                                </div>
+
+                            </div>
+                            <a class="nav-item nav-link " href="/logout ">Logout <img src="/images/logout.png " alt=" " /></a>
+                            <% } %>
+                </div>
+                <div class="navbar-nav d-block d-lg-none ml-auto ">
+                    <a class="nav-item nav-link " href="/profile ">
+                        <i class="fa fa-user "></i>
+                    </a>
+                </div>
+            </div>
+        </nav>
+
+        <div id="mySidenav " class="responsive-sidenav ">
+            <a href="javascript:void(0) " class="closebtn " onclick="closeNav() ">&times;</a>
+            <a href="/publication/new "><i class="fas fa-edit "></i> Create Publication</a>
+            <a href="/publication "><i class="fas fa-binoculars "></i> View Publication</a>
+            <a href="/studpub "><i class="fas fa-user-edit "></i> Create Student Publication</a>
+            <a href="# "><i class="fas fa-user-graduate "></i> View Student Publication</a>
+            <a href="/fundprj/new "><i class="fas fa-rupee-sign "></i> Create Funded Project</a>
+            <a href="/fundprj "><i class="fas fa-search-dollar "></i> View Funded Project</a>
+        </div>
+    </div>
+    <div class="container-fluid nav-padding ">
+
+        <div class="pb-5 "></div>
+        <script type="text/javascript ">
+            function openNav() {
+                document.getElementById("mySidenav ").style.width = "250px ";
+            }
+
+            /* Set the width of the side navigation to 0 */
+            function closeNav() {
+                document.getElementById("mySidenav ").style.width = "0 ";
+            }
+
+            function openProfile() {
+                document.getElementById("profileNav ").style.width = "250px ";
+            }
+
+            /* Set the width of the side navigation to 0 */
+            function closeProfile() {
+                document.getElementById("profileNav ").style.width = "0 ";
+            }
+        </script>
+
+        </span>

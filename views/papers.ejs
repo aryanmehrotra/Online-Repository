@@ -1,0 +1,81 @@
+<%- include("partials/header.ejs") %>
+    <div class="row">
+        <%- include("partials/navbar.ejs") %>
+            <div class="col-md-8 left">
+                <p class="heading-pg">View Publication</p>
+
+                <div class="table-responsive">
+                    <table class="table table-hover css-serial table-striped">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th scope="col">Category</th>
+                                <th scope="col">Author</th>
+                                <th scope="col">Journal Name</th>
+                                <th scope="col">Publication Title</th>
+                                <th scope="col">Volume Number</th>
+                                <th scope="col">Issue Number</th>
+                                <th scope="col">Page Number</th>
+                                <th scope="col">Issn Number</th>
+                                <th scope="col">Indexing Number</th>
+                            </tr>
+                        </thead>
+                        <% rPapers.forEach(function(i){ %>
+                            <tbody>
+                                <tr>
+                                    <td></td>
+
+                                    <td>
+                                        <%= i.Category %>
+                                    </td>
+                                    <td>
+                                        <%= i.author %>
+                                    </td>
+                                    <td>
+                                        <%= i.journal_name %>
+                                    </td>
+                                    <td>
+                                        <%= i.publication_title %>
+                                    </td>
+                                    <td>
+                                        <%= i.volume_number %>
+                                    </td>
+                                    <td>
+                                        <%= i.issue_number %>
+                                    </td>
+                                    <td>
+                                        <%= i.page_number %>
+                                    </td>
+                                    <td>
+                                        <%= i.issn_number %>
+                                    </td>
+                                    <td>
+                                        <%= i.pindexing %>
+                                    </td>
+
+                                    <td>
+                                        <a href="publication/download/<%= i.fileURI %>">Download File</a>
+                                    </td>
+
+                                    <td>
+                                        <a href="publication/edit?puid=<%= i._id %>">Edit</a>
+                                    </td>
+                                    <% if(i.createdBy == username){ %>
+                                        <td>
+                                            <a href="publication/delete/<%= i._id %>" style="color: red;">Delete</a>
+                                        </td>
+                                        <% } %>
+
+
+
+                                </tr>
+
+                            </tbody>
+
+                            <% }); %>
+                    </table>
+                </div>
+            </div>
+
+    </div>
+    <%- include("partials/footer.ejs") %>

@@ -1,0 +1,64 @@
+<%- include("partials/header.ejs") %>
+    <div class="row">
+        <%- include("partials/navbar.ejs") %>
+            <div class="col-md-8 left">
+                <p class="heading-pg">Targets</p>
+
+                <div class="table-responsive">
+                    <table class="table table-hover css-serial table-striped">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th scope="col">Category</th>
+                                <th scope="col">Title</th>
+                                <th scope="col">Indexing</th>
+                                <th scope="col">Date</th>
+                                <th scope="col">Assigned By</th>
+                                <th scope="col">Assigned To</th>
+                            </tr>
+                        </thead>
+                        <% setTarget.forEach(function(i){ %>
+                            <tbody>
+                                <tr>
+                                    <td></td>
+                                    <td>
+                                        <%= i.category_set_trgt.toString() %>
+                                    </td>
+                                    <td>
+                                        <%= i.title_set_trgt%>
+                                    </td>
+                                    <td>
+                                        <%= i.indexing %>
+                                    </td>
+                                    <td>
+                                        <%= i.achievement_date_set_trgt %>
+                                    </td>
+                                    <td>
+                                        <%= i.assigned_by %>
+                                    </td>
+                                    <td>
+                                        <%= i.assigned_to %>
+                                    </td>
+
+                                    <% if(i.completed == 0){ %>
+                                        <td>
+                                            <a href="settarget/complete/<%= i._id %>">Mark as Completed</a>
+                                        </td>
+                                        <% }else{ %>
+                                            <td>
+                                                <a href="#">Completed</a>
+                                            </td>
+                                            <% } %>
+                                                <% if(i.completed == 0){ %>
+                                                    <td>
+                                                        <a href="/settarget/delete/<%= i._id %>" style="color: red;">Delete</a>
+                                                    </td>
+                                                    <% } %>
+                                </tr>
+                            </tbody>
+                            <% }); %>
+                    </table>
+                </div>
+            </div>
+
+    </div>

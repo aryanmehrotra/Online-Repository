@@ -1,0 +1,55 @@
+<div class="col-lg-2 d-none d-lg-block">
+    <div class="d-flex justify-content-center">
+        <img src="/images/profile_pic.png" alt="person" class="img-fluid" />
+    </div>
+    <div>
+        <p class="d-flex justify-content-center font-weight-bold" id="Name">
+            <%= currentUser %>
+                <%= lastName %>
+        </p>
+        <p class="d-flex justify-content-center font-weight-light" id="designation">
+            <%= grade %>
+        </p>
+    </div>
+
+    <div class="info text-left">
+        <div>
+            <p><span class="genre">University Identity Number</span></p>
+            <p><span id="GU_id"><%= username %></span></p>
+        </div>
+        <hr />
+        <div>
+            <p><span class="genre">School</span></p>
+            <p>
+                <span id="school_name"><%= School %></span>
+            </p>
+        </div>
+        <hr />
+        <div>
+            <p><span class="genre">Reward Points</span></p>
+            <p><span id="r_p">44</span></p>
+        </div>
+        <hr />
+        <div>
+            <p><span class="genre">Web of Science</span></p>
+            <p><span id="w_o_s_id"><a href="https://publons.com/researcher/<%= WebOfScience %>"><%= WebOfScience %></a> </span></p>
+        </div>
+        <hr />
+        <div>
+            <p><span class="genre">Scorpus ID</span></p>
+            <p><span id="sc_id"><a href="https://www.scopus.com/authid/detail.uri?authorId=<%= ScorpusId  %>"><%= ScorpusId  %></a></span></p>
+        </div>
+        <hr />
+        <div>
+            <p><span class="genre">Google Scholar ID</span></p>
+            <p><span id="g_sc_id"><%= GoogleScholarId %></span></p>
+        </div>
+        <hr />
+        <div>
+            <p><span class="genre">Orchid ID</span></p>
+            <p><span id="or_id">
+                <a href="https://orcid.org/<%= OrchidId %>"><%= OrchidId %></a>
+                </span></p>
+        </div>
+    </div>
+</div>

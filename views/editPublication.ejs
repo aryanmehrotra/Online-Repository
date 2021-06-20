@@ -1,0 +1,125 @@
+<%- include("partials/header.ejs") %>
+    <div class="row">
+        <%- include("partials/navbar.ejs") %>
+            <div class="col-md-8 left ">
+                <p class="heading-pg">Edit Publication</p>
+                <form class="needs-validation" ref='uploadForm' id='uploadForm' action="/publication/edit" method="POST" encType="multipart/form-data" novalidate>
+                    <!-- <div class="form-group col-md-8">
+                        <label for="category">Category</label>
+                        <select class="custom-select form-control" name="category" placeholder="category" required>
+                                <option value="International Journal">International Journal</option>
+                                <option value="National Journal">National Journal</option>
+                                <option value="Book Chapter">Book Chapter</option>
+                                <option value="Edited Book">Edited Book</option>
+                                <option value="National Conference">National Conference</option>
+                                <option value="International Conference">
+                                    International Conference
+                                </option>
+                                <option value="Patent">Patent</option>
+                                </select>
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div> -->
+                    <div class="form-group col-md-8" style="display: none;">
+                        <label for="AuthorName">Unique ID</label>
+                        <input type="text" class="form-control" name="pubid" value="<%= pubid %>" required readonly />
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+                    <div class="form-group col-md-8" style="display: none;">
+                        <label for="AuthorName">Author Name</label>
+                        <input type="text" class="form-control" name="author" value="<%= author %>" required />
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+                    <div class="form-group col-md-8">
+                        <label for="title_of_paper">Publication Title</label>
+                        <input type="text" class="form-control" name="publication_title" value="<%= publication_title %>" required />
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+                    <div class="form-group col-md-8">
+                        <label for="journal/conference_name">Journal / Conference Name</label>
+                        <input type="text" class="form-control" name="journal_name" value="<%= journal_name %>" required />
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+                    <div class="form-group col-md-8">
+                        <label for="title_of_paper">Volume Number</label>
+                        <input type="text" class="form-control" name="volume_number" value="<%= volume_number %>" required />
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+                    <div class="form-group col-md-8">
+                        <label for="title_of_paper">Issue Number</label>
+                        <input type="text" class="form-control" name="issue_number" value="<%= issue_number %>" required />
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+                    <div class="form-group col-md-8">
+                        <label for="title_of_paper">Page Number</label>
+                        <input type="text" class="form-control" name="page_number" value="<%= page_number %>" required />
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+                    <div class="form-group col-md-8">
+                        <label for="title_of_paper">ISSN Number</label>
+                        <input type="text" class="form-control" name="issn_number" value="<%= issn_number %>" required />
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+                    <div class="form-group col-md-8">
+                        <label for="title_of_paper">Indexing</label>
+                        <input type="text" class="form-control" name="pindexing" value="<%= pindexing %>" required />
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+                    <!-- <div class="form-group col-md-8">
+                        <label for="file_upload">Upload Document</label>
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div>
+                    <div class="custom-file col-md-8">
+                        <input type="file" class="custom-file-input" id="customFile" name="pubfile" required />
+                        <label class="custom-file-label" for="customFile">Choose file</label>
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback">Please fill out this field.</div>
+                    </div> -->
+                    <br />
+                    <br />
+                    <div class="col-md-8">
+                        <button class="btn btn-primary" class="submit">Submit!</button>
+                    </div>
+                </form>
+            </div>
+
+    </div>
+    <script>
+        // Disable form submissions if there are invalid fields
+        (function() {
+            "use strict";
+            window.addEventListener(
+                "load",
+                function() {
+                    // Get the forms we want to add validation styles to
+                    var forms = document.getElementsByClassName("needs-validation");
+                    // Loop over them and prevent submission
+                    var validation = Array.prototype.filter.call(forms, function(form) {
+                        form.addEventListener(
+                            "submit",
+                            function(event) {
+                                if (form.checkValidity() === false) {
+                                    event.preventDefault();
+                                    event.stopPropagation();
+                                }
+                                form.classList.add("was-validated");
+                            },
+                            false
+                        );
+                    });
+                },
+                false
+            );
+        })();
+    </script>
+    <%- include("partials/footer.ejs") %>

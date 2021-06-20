@@ -1,0 +1,80 @@
+<%- include("partials/header.ejs") %>
+
+    <div class="row">
+        <%- include("partials/admin_navbar.ejs") %>
+            <div class="col-lg-8 left">
+                <div class="media mx-lg-5 mt-5">
+                    <div class="media-body p-5">
+                        <h5 class="mt-0 mb-1 heading">Welcome back
+                            <%= currentUser %>
+                                <%= lastName %>
+                        </h5>
+                        <p class="d-none d-lg-block">
+                            You have completed 70% of your goal this month!.<br /> Keep it up and improve your results!
+                        </p>
+                    </div>
+                    <img src="/images/hooman.png" class="m-5 hooman img-fluid" alt="..." />
+                </div>
+                <div class="m-5">
+                    <!-- <div class="row">
+                        <div class="col cards m-3">
+                            <h5 class="p-4">Your Target</h5>
+                            <div class="p-4">
+                                <p>International Journal</p>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="75">
+                                        75%
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <p>Patent</p>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="10">
+                                        10%
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <p>Conference</p>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="50">
+                                        50%
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col cards m-3">
+                            <h5 class="p-4">Assigned Target</h5>
+                            <div class="p-4">
+                                <p>International Journal</p>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="75">
+                                        75%
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <p>Patent</p>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="10">
+                                        10%
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <p>Conference</p>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="50">
+                                        50%
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+            <%- include("partials/profile.ejs") %>
+    </div>
+
+    <%- include("partials/footer.ejs") %>

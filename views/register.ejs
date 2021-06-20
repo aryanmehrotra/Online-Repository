@@ -1,0 +1,52 @@
+<%- include("./partials/header") %>
+
+    <div class="row">
+        <h1 style="text-align: center">Sign Up</h1>
+        <div style="width: 30%; margin: 25px auto;">
+            <form action="/register" method="post">
+                <div class="form-group">
+                    <input class="form-control" type="email" name="email" placeholder="Email Id">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="username" placeholder="GU Id">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="password" name="password" placeholder="password">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="firstName" placeholder="first name">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="lastName" placeholder="last name">
+                </div>
+
+                <div class="form-group">
+                    <input class="form-control" type="text" name="School" placeholder="School">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="Grade" placeholder="Grade">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="WebOfScience" placeholder="WebOfScience Id">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="ScorpusId" placeholder="Scorpus Id">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="GoogleScholarId" placeholder=" GoogleScholar Id">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="OrchidId" placeholder="Orchid Id">
+                </div>
+                <div class="form-group">
+                    <input class="form-control" type="text" name="isAdmin" placeholder="Only for Admins ! Leave blank if you aren't">
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-lg btn-primary btn-block">Sign Up!</button>
+                </div>
+            </form>
+            <a href="/">Go Back</a>
+        </div>
+    </div>
+
+    <%- include("./partials/footer") %>

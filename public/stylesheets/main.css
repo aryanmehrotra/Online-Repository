@@ -1,0 +1,213 @@
+.logo {
+    height: 40px;
+}
+
+.responsive-sidenav {
+    height: 100%;
+    /* 100% Full-height */
+    width: 0;
+    /* 0 width - change this with JavaScript */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Stay on top */
+    top: 0;
+    /* Stay at the top */
+    left: 0;
+    background-color: whitesmoke;
+    /* Black*/
+    overflow-x: hidden;
+    /* Disable horizontal scroll */
+    padding-top: 60px;
+    overflow: hidden;
+    /* Place content 60px from the top */
+    transition: 0.5s;
+    /* 0.5 second transition effect to slide in the responsive-sidenav */
+}
+
+.navbard-link {
+    position: absolute;
+    right: 50px;
+}
+
+
+/* The navigation menu links */
+
+.responsive-sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #FD6775;
+    display: block;
+    transition: 0.3s;
+    padding-top: 30px;
+    font-size: 3vh;
+}
+
+
+/* When you mouse over the navigation links, change their color */
+
+.responsive-sidenav a:hover {
+    color: black;
+}
+
+
+/* Position and style the close button (top right corner) */
+
+.side-nav {
+    /* height: 100%; */
+    /* Full-height: remove this if you want "auto" height */
+    position: sticky;
+    /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 0;
+    /* Stay on top */
+    top: 0;
+    left: 0;
+    /* Black */
+    overflow-x: hidden;
+    /* Disable horizontal scroll */
+    /* padding-top: 50px; */
+}
+
+.side-nav a {
+    color: #FD6775;
+    padding-top: 20px;
+    font-size: 2.5vh;
+}
+
+.side-nav :hover {
+    color: black;
+}
+
+.active {
+    color: black !important;
+}
+
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+
+#main {
+    transition: margin-left .5s;
+    padding: 20px;
+}
+
+
+/* On smaller screens, where height is less than 450px, change the style of the responsive-sidenav (less padding and a smaller font size) */
+
+@media screen and (max-height: 450px) {
+    .responsive-sidenav {
+        padding-top: 15px;
+    }
+    .responsive-sidenav a {
+        font-size: 18px;
+    }
+}
+
+.hooman {
+    width: 125px;
+}
+
+.heading {
+    color: #FD6775;
+}
+
+.media {
+    background-color: #F7E5E9;
+    border-radius: 25px;
+}
+
+.fa-bars {
+    font-size: x-large;
+}
+
+.fa-user {
+    font-size: x-large;
+}
+
+.left {
+    background-color: #F5F5FB;
+}
+
+.navs {
+    background-color: #991d1f;
+}
+
+.cards {
+    background-color: white;
+    border-radius: 10px;
+}
+
+.info {
+    border: 1px;
+    padding-top: 20px;
+}
+
+.genre {
+    color: #818181;
+}
+
+.heading-pg {
+    font-size: 25px;
+    padding: 25px 25px 0px 0px;
+    font-weight: bold;
+}
+
+.form-group {
+    color: #707070;
+    font-weight: bold;
+    padding-top: 20px;
+}
+
+.footer {
+    background-color: #991d1f;
+}
+
+.nav-padding {
+    padding-top: 20px;
+}
+
+.css-serial {
+    counter-reset: serial-number;
+    /* Set the serial number counter to 0 */
+}
+
+.css-serial td:first-child:before {
+    counter-increment: serial-number;
+    /* Increment the serial number counter */
+    content: counter(serial-number);
+    /* Display the counter */
+}
+
+.wrapper {
+    position: absolute;
+    left: 25%;
+    width: 50%;
+    height: 100%;
+}
+
+#progressbar {
+    position: relative;
+    top: 49%;
+    width: 100%;
+    height: 2%;
+    border: 1px solid black;
+}
+
+#progressbar #progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: orange;
+    -webkit-transition: all 1s linear;
+    transition: all 1s linear;
+}
+
+#progressbar div.step {
+    position: relative;
+    border-right: 1px solid black;
+    height: 100%;
+    float: left;
+    z-index: 999;
+}

@@ -1,0 +1,203 @@
+<%- include("partials/header.ejs") %>
+
+    <div class="row">
+        <%- include("partials/navbar.ejs") %>
+            <div class="col-lg-8 left">
+                <div class="media mx-lg-5 mt-5">
+                    <div class="media-body p-5">
+                        <h5 class="mt-0 mb-1 heading">Welcome back
+                            <%= currentUser %>
+                                <%= lastName %>
+                        </h5>
+                        <p class="d-none d-lg-block">
+                            You have completed 70% of your goal this month!.<br /> Keep it up and improve your results!
+                        </p>
+                    </div>
+                    <img src="/images/hooman.png" class="m-5 hooman img-fluid" alt="..." />
+                </div>
+                <div class="m-5">
+                    <div class="row">
+                        <div class="col cards m-3">
+                            <h5 class="p-4">Your Target</h5>
+                            <div class="p-4">
+                                <p>International Journal</p>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped bg-danger progress-bar-animated" role="progressbar" id="Journal" style="width: 0%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="75">
+                                        <%= compcntIntJournal %> /
+                                            <%= cntIntJournal %>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <p>Patent</p>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped bg-danger progress-bar-animated" id="Patent" role="progressbar" style="width: 0%" aria-valuemin="0" aria-valuemax="10">
+                                        <%= compcntPatent %> /
+                                            <%= cntPatent %>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <p>National Conference</p>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped bg-danger progress-bar-animated" id="Conf" role="progressbar" style="width: 0%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="50">
+                                        <%= (compcntConf) %> /
+                                            <%= (cntConf) %>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <p>National Journal</p>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped bg-danger progress-bar-animated" id="journal" role="progressbar" style="width: 0%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="50">
+                                        <%= (compcntJournal) %> /
+                                            <%= (cntJournal) %>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <p>Book Chapter</p>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped bg-danger progress-bar-animated" id="nBook" role="progressbar" style="width: 0%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="50">
+                                        <%= (compcntnewBook) %> /
+                                            <%= (cntnewBook) %>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <p>Edited Book</p>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped bg-danger progress-bar-animated" id="eBook" role="progressbar" style="width: 0%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="50">
+                                        <%= (compcnteditBook) %> /
+                                            <%= (cnteditBook) %>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <p>International Conference</p>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped bg-danger progress-bar-animated" id="IntConf" role="progressbar" style="width: 0%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="50">
+                                        <%= (compcntIntConf) %> /
+                                            <%= (cntIntConf) %>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col cards m-3">
+                            <h5 class="p-4">Assigned Target</h5>
+                            <div class="p-4">
+                                <p>International Journal</p>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped bg-danger progress-bar-animated" id="Journalass" role="progressbar" style="width: 0%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="75">
+                                        <%= (compcntIntJournalass) %> /
+                                            <%= (cntIntJournalass) %>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <p>Patent</p>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped bg-danger progress-bar-animated" id="Patentass" role="progressbar" style="width: 0%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="10">
+                                        <%= (compcntPatentass) %> /
+                                            <%= (cntPatentass) %>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <p>Conference</p>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped bg-danger progress-bar-animated" id="Confass" role="progressbar" style="width: 0%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="50">
+                                        <%= (compcntConfass) %> /
+                                            <%= (cntConfass) %>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <p>National Journal</p>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped bg-danger progress-bar-animated" id="journalass" role="progressbar" style="width: 0%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="50">
+                                        <%= (compcntJournalass) %> /
+                                            <%= (cntJournalass) %>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <p>Book Chapter</p>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped bg-danger progress-bar-animated" id="nBookass" role="progressbar" style="width: 0%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="50">
+                                        <%= (compcntnewBookass) %> /
+                                            <%= (cntnewBookass) %>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <p>Edited Book</p>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped bg-danger progress-bar-animated" id="eBookass" role="progressbar" style="width: 0%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="50">
+                                        <%= (compcnteditBookass) %> /
+                                            <%= (cnteditBookass) %>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-4">
+                                <p>International Conference</p>
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped bg-danger progress-bar-animated" id="IntConfass" role="progressbar" style="width: 0%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="50">
+                                        <%= (compcntIntConfass) %> /
+                                            <%= (cntIntConfass) %>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    // Self
+                    var Journal = <%= (compcntIntJournal/cntIntJournal)*100 %>
+                    document.getElementById("Journal").style.width = Journal + '%';
+
+                    var Patent = <%= (compcntPatent/cntPatent)*100 %>
+                    document.getElementById("Patent").style.width = Patent + '%';
+
+                    var Conf = <%= (compcntConf/cntConf)*100 %>
+                    document.getElementById("Conf").style.width = Conf + '%';
+
+                    var IntConf = <%= (compcntIntConf/cntIntConf)*100 %>
+                    document.getElementById("IntConf").style.width = IntConf + '%';
+
+                    var nBook = <%= (compcntnewBook/cntnewBook)*100 %>
+                    document.getElementById("nBook").style.width = nBook + '%';
+
+                    var eBook = <%= (compcnteditBook/cnteditBook)*100 %>
+                    document.getElementById("eBook").style.width = eBook + '%';
+
+                    var journal = <%= (compcntJournal/cntJournal)*100 %>
+                    document.getElementById("journal").style.width = journal + '%';
+
+                    // Assigned
+                    var Journalass = <%= (compcntIntJournalass/cntIntJournalass)*100 %>
+                    document.getElementById("Journalass").style.width = Journalass + '%';
+
+                    var Patentass = <%= (compcntPatentass/cntPatentass)*100 %>
+                    document.getElementById("Patentass").style.width = Patentass + '%';
+
+                    var Confass = <%= (compcntConfass/cntConfass)*100 %>
+                    document.getElementById("Confass").style.width = Confass + '%';
+
+                    var IntConfass = <%= (compcntIntConfass/cntIntConfass)*100 %>
+                    document.getElementById("IntConfass").style.width = IntConfass + '%';
+
+                    var nBookass = <%= (compcntnewBookass/cntnewBookass)*100 %>
+                    document.getElementById("nBookass").style.width = nBookass + '%';
+
+                    var eBookass = <%= (compcnteditBookass/cnteditBookass)*100 %>
+                    document.getElementById("eBookass").style.width = eBookass + '%';
+
+                    var journalass = <%= (compcntJournalass/cntJournalass)*100 %>
+                    document.getElementById("journalass").style.width = journalass + '%';
+                </script>
+            </div>
+            <%- include("partials/profile.ejs") %>
+    </div>
+
+    <%- include("partials/footer.ejs") %>

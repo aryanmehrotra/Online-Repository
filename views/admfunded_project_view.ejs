@@ -1,0 +1,61 @@
+<%- include("partials/header.ejs") %>
+    <div class="row">
+        <%- include("partials/admin_navbar.ejs") %>
+            <div class="col-md-8 left">
+                <p class="heading-pg">Targets</p>
+
+                <div class="table-responsive">
+                    <table class="table table-hover css-serial table-striped">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th scope="col">Name of Principal Investigator</th>
+                                <th scope="col">Name of Co-Investigator</th>
+                                <th scope="col">Title of the Project</th>
+                                <th scope="col">Funding Agency</th>
+                                <th scope="col">Overall Cost (in RS.)</th>
+                                <th scope="col">Start Date</th>
+                                <th scope="col">End Date</th>
+                            </tr>
+                        </thead>
+                        <% fDetails.forEach(function(i){ %>
+                            <tbody>
+                                <tr>
+                                    <td></td>
+
+                                    <td>
+                                        <%= i.namePrincipalInvestigator %>
+                                    </td>
+                                    <td>
+                                        <%= i.nameCoInvestigator %>
+                                    </td>
+                                    <td>
+                                        <%= i.title %>
+                                    </td>
+                                    <td>
+                                        <%= i.fundingAgency %>
+                                    </td>
+                                    <td>
+                                        <%= i.overallCost %>
+                                    </td>
+                                    <td>
+                                        <%= i.startDate %>
+                                    </td>
+                                    <td>
+                                        <%= i.EndDate %>
+                                    </td>
+                                    <td>
+                                        <a href="fundprj/edit?puid=<%= i._id %>">Edit</a>
+                                    </td>
+                                    <td>
+                                        <a href="#" style="color: red;">Delete</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <% }); %>
+                    </table>
+                </div>
+            </div>
+
+    </div>
+    <%- include("partials/footer.ejs") %>

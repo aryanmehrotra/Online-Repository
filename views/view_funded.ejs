@@ -1,0 +1,45 @@
+<%- include("partials/header.ejs") %>
+<div class="row">
+  <%- include("partials/navbar.ejs") %>
+  <div class="col-md-8 left">
+    <p class="heading-pg">Student View</p>
+
+    <div class="table-responsive">
+      <table class="table table-hover table-striped">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Principal Investigator</th>
+            <th scope="col">Co-Investigator</th>
+            <th scope="col">Title of the Project</th>
+            <th scope="col">Funding Agency</th>
+            <th scope="col">Overall Cost</th>
+            <th scope="col">Start Date</th>
+            <th scope="col">End Date</th>
+          </tr>
+        </thead>
+        <!-- <% setTarget.forEach(function(i){ %> -->
+        <tbody>
+          <tr>
+            <th scope="row"></th>
+            <td>
+              <!-- <%= i.category_set_trgt.toString() %> -->
+            </td>
+            <td>
+              <!-- <%= i.title_set_trgt%> -->
+            </td>
+            <td>
+              <!-- <%= i.indexing %> -->
+            </td>
+            <td>
+              <!-- <%= i.achievement_date_set_trgt %> -->
+            </td>
+          </tr>
+        </tbody>
+        <% }); %>
+      </table>
+    </div>
+  </div>
+  <%- include("partials/profile.ejs") %>
+</div>
+<%- include("partials/footer.ejs") %>
